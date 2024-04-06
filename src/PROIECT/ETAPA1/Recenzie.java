@@ -9,20 +9,18 @@ public class Recenzie {
         this.comentariu = comentariu;
     }
 
-    //GET
+    // GET
     public Utilizator getAutor() {
         return autor;
     }
-
     public String getComentariu() {
         return comentariu;
     }
 
-    //SET
+    // SET
     public void setAutor(Utilizator autor) {
         this.autor = autor;
     }
-
     public void setComentariu(String comentariu) {
         this.comentariu = comentariu;
     }
