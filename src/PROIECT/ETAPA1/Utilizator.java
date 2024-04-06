@@ -12,6 +12,23 @@ public class Utilizator {
     }
 
     // GET
-
+    public String getNume() {
+        return nume;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public String getParola() {
+        return parola;
+    }
     // SET
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setParola(String parola) {
+        this.parola = parola;
+    }
 }
