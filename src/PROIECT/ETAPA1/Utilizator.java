@@ -21,6 +21,7 @@ public class Utilizator {
     public String getParola() {
         return parola;
     }
+
     // SET
     public void setNume(String nume) {
         this.nume = nume;
