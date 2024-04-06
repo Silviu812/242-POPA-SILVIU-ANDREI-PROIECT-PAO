@@ -2,11 +2,11 @@ package PROIECT.ETAPA1;
 
 public class Recenzie {
     private Utilizator autor;
-    private String continut;
+    private String comentariu;
 
-    public Recenzie(Utilizator autor, String continut) {
+    public Recenzie(Utilizator autor, String comentariu) {
         this.autor = autor;
-        this.continut = continut;
+        this.comentariu = comentariu;
     }
 
     //GET
@@ -14,8 +14,8 @@ public class Recenzie {
         return autor;
     }
 
-    public String getContinut() {
-        return continut;
+    public String getComentariu() {
+        return comentariu;
     }
 
     //SET
@@ -23,7 +23,7 @@ public class Recenzie {
         this.autor = autor;
     }
 
-    public void setContinut(String continut) {
-        this.continut = continut;
+    public void setComentariu(String comentariu) {
+        this.comentariu = comentariu;
     }
 }
