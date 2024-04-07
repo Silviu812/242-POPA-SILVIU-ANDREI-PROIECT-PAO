@@ -4,6 +4,7 @@ public class Produs {
     private String nume;
     private double pret;
     private String descriere;
+    private double discount;
 
     public Produs(String nume, double pret, String descriere) {
         this.nume = nume;
@@ -21,6 +22,9 @@ public class Produs {
     public String getDescriere() {
         return descriere;
     }
+    public double getDiscount() {
+        return discount;
+    }
 
     //SET
     public void setNume(String nume) {
@@ -31,5 +35,8 @@ public class Produs {
     }
     public void setDescriere(String descriere) {
         this.descriere = descriere;
+    }
+    public void setDiscount(double discount) {
+        this.discount = discount;
     }
 }
