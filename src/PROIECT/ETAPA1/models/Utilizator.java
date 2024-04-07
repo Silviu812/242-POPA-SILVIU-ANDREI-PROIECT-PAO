@@ -1,4 +1,4 @@
-package PROIECT.ETAPA1;
+package PROIECT.ETAPA1.models;
 
 public class Utilizator {
     private String nume;

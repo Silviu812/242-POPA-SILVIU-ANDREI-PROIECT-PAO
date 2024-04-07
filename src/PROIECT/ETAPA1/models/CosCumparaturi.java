@@ -1,4 +1,4 @@
-package PROIECT.ETAPA1;
+package PROIECT.ETAPA1.models;
 
 import java.util.ArrayList;
 import java.util.List;

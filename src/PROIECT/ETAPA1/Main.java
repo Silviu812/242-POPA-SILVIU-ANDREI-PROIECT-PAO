@@ -1,5 +1,8 @@
 package PROIECT.ETAPA1;
 
+import PROIECT.ETAPA1.models.*;
+import PROIECT.ETAPA1.services.StocServices;
+
 import java.util.Map;
 import java.util.Scanner;
 
@@ -7,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CosCumparaturi cosCumparaturi = new CosCumparaturi();
-        Stoc stoc = new Stoc();
+        StocServices stocServices = new StocServices();
 
         boolean continuare = true;
         while (continuare) {
@@ -43,7 +46,7 @@ public class Main {
                     cosCumparaturi.afiseazaCos();
                     break;
                 case 3:
-                    for (Map.Entry<Produs, Integer> entry : stoc.getStocProduse().entrySet()) {
+                    for (Map.Entry<Produs, Integer> entry : stocServices.getStocProduse().entrySet()) {
                         System.out.println(entry.getKey().getNume() + ": " + entry.getValue());
                     }
                     break;
@@ -54,7 +57,7 @@ public class Main {
                     int cantitateProdusStoc = scanner.nextInt();
 
                     Produs produsStoc = new Produs(numeProdusStoc, 0, "");
-                    stoc.adaugaProdus(produsStoc, cantitateProdusStoc);
+                    stocServices.adaugaProdus(produsStoc, cantitateProdusStoc);
                     System.out.println("Produs adaugat in stoc!");
                     break;
                 case 5:
@@ -64,7 +67,7 @@ public class Main {
                     int cantitateProdusStocEliminare = scanner.nextInt();
 
                     Produs produsStocEliminare = new Produs(numeProdusStocEliminare, 0, "");
-                    stoc.eliminaProdus(produsStocEliminare, cantitateProdusStocEliminare);
+                    stocServices.eliminaProdus(produsStocEliminare, cantitateProdusStocEliminare);
                     System.out.println("Produs eliminat din stoc!");
                     break;
                 case 6:
@@ -92,7 +95,7 @@ public class Main {
                     String numeProdusPromotie = scanner.next();
 
                     Produs produsPromotie = null;
-                    for (Map.Entry<Produs, Integer> entry : stoc.getStocProduse().entrySet()) {
+                    for (Map.Entry<Produs, Integer> entry : stocServices.getStocProduse().entrySet()) {
                         if (entry.getKey().getNume().equals(numeProdusPromotie)) {
                             produsPromotie = entry.getKey();
                             break;
@@ -113,7 +116,7 @@ public class Main {
                     System.out.println("Introdu numele produsului:");
                     String numeProdusCantitate = scanner.next();
                     Produs produsCantitate = new Produs(numeProdusCantitate, 0, "");
-                    int cantitateDisponibila = stoc.getCantitateDisponibila(produsCantitate);
+                    int cantitateDisponibila = stocServices.getCantitateDisponibila(produsCantitate);
                     System.out.println("Cantitate disponibila pentru produsul " + numeProdusCantitate + " este: " + cantitateDisponibila);
                     break;
                 case 10:
@@ -127,7 +130,7 @@ public class Main {
                     System.out.println("Introdu numele produsului de eliminat complet din stoc:");
                     String numeProdusEliminareStoc = scanner.next();
                     Produs produsEliminareStoc = new Produs(numeProdusEliminareStoc, 0, "");
-                    stoc.eliminaProdus(produsEliminareStoc, stoc.getCantitateDisponibila(produsEliminareStoc));
+                    stocServices.eliminaProdus(produsEliminareStoc, stocServices.getCantitateDisponibila(produsEliminareStoc));
                     System.out.println("Produsul eliminat complet din stoc!");
                     break;
 
